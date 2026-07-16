@@ -24,8 +24,11 @@ scroll-behavior:smooth;
 body{
 
 font-family:Inter,sans-serif;
-background:#050505;
+
+background:transparent;
+
 color:white;
+
 overflow-x:hidden;
 
 }
@@ -215,6 +218,10 @@ padding:110px 8%;
 
 scroll-margin-top:100px;
 
+background:rgba(5,5,5,.45);
+
+backdrop-filter:blur(3px);
+
 }
   
 section h2{
@@ -291,13 +298,13 @@ color:#ddd;
 
 footer{
 
-background:#080808;
+background:rgba(0,0,0,.70);
+
+backdrop-filter:blur(8px);
 
 padding:60px 20px;
 
 text-align:center;
-
-color:#888;
 
 }
   
@@ -337,9 +344,46 @@ gap:18px;
 
 .hero{
 
-padding-top:150px;
+position:relative;
 
-text-align:center;
+min-height:100vh;
+
+padding-top:100px;
+
+display:flex;
+
+align-items:center;
+
+overflow:hidden;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100vw;
+height:100vh;
+
+background-image:
+linear-gradient(
+rgba(0,0,0,.72),
+rgba(0,0,0,.82)
+),
+url("assets/banner.png");
+
+background-size:cover;
+
+background-position:center center;
+
+background-repeat:no-repeat;
+
+z-index:-2;
 
 }
 
