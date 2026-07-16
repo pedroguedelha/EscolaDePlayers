@@ -36,24 +36,29 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
+height:80px;
 
-background:rgba(0,0,0,.45);
+display:flex;
+align-items:center;
 
-backdrop-filter:blur(12px);
+background:rgba(5,5,5,.75);
+
+backdrop-filter:blur(15px);
 
 border-bottom:1px solid rgba(255,255,255,.08);
 
-z-index:999;
+z-index:9999;
 
 }
 
 header .container{
 
-max-width:1200px;
+max-width:1280px;
+width:100%;
 
 margin:auto;
 
-padding:18px 30px;
+padding:0 30px;
 
 display:flex;
 
@@ -65,7 +70,9 @@ align-items:center;
 
 header img{
 
-height:48px;
+height:52px;
+width:auto;
+display:block;
 
 }
 
@@ -97,67 +104,70 @@ color:#00E6FF;
 
 .hero{
 
-height:100vh;
+min-height:100vh;
+
+padding-top:100px;
 
 background-image:
-
 linear-gradient(
-
 rgba(0,0,0,.75),
-
 rgba(0,0,0,.75)
-
 ),
-
 url("assets/banner.png");
 
 background-size:cover;
-
 background-position:center;
 
 display:flex;
-
 align-items:center;
 
 }
-
+  
 .hero-content{
 
-max-width:1200px;
+max-width:1280px;
 
 width:90%;
 
 margin:auto;
 
-}
+display:flex;
+flex-direction:column;
+justify-content:center;
 
+}
+  
 .hero-logo{
 
-width:500px;
+width:min(520px,90vw);
 
-max-width:95%;
+height:auto;
 
-margin-bottom:40px;
+display:block;
+
+margin-bottom:35px;
 
 filter:drop-shadow(0 0 30px rgba(255,255,255,.15));
 
 }
-
+  
 .hero h1{
 
 font-family:Orbitron;
 
-font-size:56px;
+font-size:clamp(2.4rem,5vw,4rem);
 
-margin-bottom:25px;
+line-height:1.15;
 
-line-height:1.2;
+margin-bottom:30px;
+
+max-width:850px;
 
 }
-
+  
 .hero p{
 
-font-size:22px;
+font-size:clamp(1rem,2vw,1.3rem);
 
 line-height:1.8;
 
@@ -168,7 +178,7 @@ color:#d9d9d9;
 margin-bottom:45px;
 
 }
-
+  
 .btn{
 
 display:inline-block;
@@ -201,33 +211,43 @@ box-shadow:0 0 50px rgba(0,230,255,.6);
 
 section{
 
-padding:100px 10%;
+padding:110px 8%;
+
+scroll-margin-top:100px;
 
 }
-
+  
 section h2{
 
 font-family:Orbitron;
 
-font-size:38px;
+font-size:clamp(2rem,3vw,2.5rem);
 
 margin-bottom:40px;
 
 }
-
+  
 .cards{
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
-gap:30px;
+gap:35px;
+
+align-items:stretch;
 
 margin-top:50px;
 
 }
-
+  
 .card{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-start;
 
 background:#111;
 
@@ -237,10 +257,12 @@ border-radius:18px;
 
 padding:35px;
 
+min-height:230px;
+
 transition:.35s;
 
 }
-
+  
 .card:hover{
 
 transform:translateY(-10px);
@@ -271,15 +293,23 @@ footer{
 
 background:#080808;
 
-padding:50px;
+padding:60px 20px;
 
 text-align:center;
 
 color:#888;
 
 }
+  
+@media (max-width:900px){
 
-@media(max-width:900px){
+header{
+
+height:auto;
+
+padding:15px 0;
+
+}
 
 header .container{
 
@@ -289,34 +319,62 @@ gap:20px;
 
 }
 
-nav{
+header img{
 
-flex-wrap:wrap;
+height:42px;
+
+}
+
+nav{
 
 justify-content:center;
 
-}
+flex-wrap:wrap;
 
-.hero h1{
-
-font-size:38px;
+gap:18px;
 
 }
 
-.hero p{
+.hero{
 
-font-size:18px;
+padding-top:150px;
+
+text-align:center;
+
+}
+
+.hero-content{
+
+align-items:center;
 
 }
 
 .hero-logo{
 
-width:320px;
+width:260px;
+
+}
+
+.hero h1{
+
+font-size:2.2rem;
+
+}
+
+.hero p{
+
+font-size:1rem;
+
+}
+
+section{
+
+padding:90px 25px;
 
 }
 
 }
-
+  
 </style>
 
 </head>
@@ -379,6 +437,8 @@ Conheça o Projeto
 
 <section id="sobre">
 
+<div class="container">
+
 <h2>Quem Somos</h2>
 
 <p>
@@ -392,6 +452,8 @@ Nosso objetivo é profissionalizar atletas de esportes eletrônicos através de 
 </section>
 
 <section id="projetos">
+
+<div class="container">
 
 <h2>Projetos</h2>
 
@@ -435,6 +497,8 @@ Nosso objetivo é profissionalizar atletas de esportes eletrônicos através de 
 
 <section id="atuacao">
 
+<div class="container">
+
 <h2>Áreas de Atuação</h2>
 
 <div class="cards">
@@ -469,6 +533,8 @@ Nosso objetivo é profissionalizar atletas de esportes eletrônicos através de 
 
 <section id="contato">
 
+<div class="container">
+
 <h2>Contato</h2>
 
 <p>
@@ -479,7 +545,7 @@ Parcerias, projetos e oportunidades.
 
 <br>
 
-<a class="btn" href="mailto:contato@expescoladeplayers.com">
+<a class="btn" href="mailto:broproducoes.cine@gmail.com">
 
 Entrar em Contato
 
@@ -489,7 +555,7 @@ Entrar em Contato
 
 <footer>
 
-© 2026 EXP. - Escola de Players
+© 2026 B.R.O' Produções & EXP. - Escola de Players
 
 </footer>
 
@@ -497,21 +563,34 @@ Entrar em Contato
 
 document.querySelectorAll("nav a").forEach(link=>{
 
-link.onclick=function(e){
+link.addEventListener("click",function(e){
 
 e.preventDefault();
 
 document.querySelector(this.getAttribute("href")).scrollIntoView({
 
-behavior:"smooth"
+behavior:"smooth",
+
+block:"start"
 
 });
 
-}
-
 });
 
+});
+  
 </script>
 
 </body>
+
+.container{
+
+max-width:1280px;
+
+width:100%;
+
+margin:auto;
+
+}
+  
 </html>
