@@ -384,6 +384,254 @@ text-align:center;
 color:#AAA;
 
 }
+
+.jogos-intro{
+
+max-width:750px;
+
+color:#d9d9d9;
+
+line-height:1.7;
+
+margin-bottom:40px;
+
+}
+
+.carousel{
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+.carousel-track{
+
+display:flex;
+
+gap:25px;
+
+width:100%;
+
+overflow-x:auto;
+
+scroll-behavior:smooth;
+
+scroll-snap-type:x mandatory;
+
+padding:15px 5px 30px;
+
+scrollbar-width:none;
+
+}
+
+.carousel-track::-webkit-scrollbar{
+
+display:none;
+
+}
+
+.game-card{
+
+flex:0 0 330px;
+
+height:420px;
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:22px;
+
+background:#111;
+
+border:1px solid rgba(255,255,255,.08);
+
+scroll-snap-align:start;
+
+transition:.35s;
+
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+.game-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#00E6FF;
+
+box-shadow:
+
+0 15px 45px rgba(0,230,255,.18);
+
+}
+
+.game-card img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+transition:.5s;
+
+}
+
+.game-card:hover img{
+
+transform:scale(1.06);
+
+}
+
+.game-card::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+to top,
+
+rgba(0,0,0,.95) 0%,
+
+rgba(0,0,0,.55) 45%,
+
+rgba(0,0,0,.05) 100%
+
+);
+
+pointer-events:none;
+
+}
+
+.game-info{
+
+position:absolute;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
+padding:30px;
+
+z-index:2;
+
+}
+
+.game-info h3{
+
+font-family:Orbitron;
+
+font-size:24px;
+
+margin-bottom:10px;
+
+color:#00E6FF;
+
+}
+
+.game-info p{
+
+font-size:14px;
+
+line-height:1.6;
+
+color:#eee;
+
+}
+
+.carousel-btn{
+
+flex-shrink:0;
+
+width:48px;
+
+height:48px;
+
+border:none;
+
+border-radius:50%;
+
+background:rgba(0,0,0,.65);
+
+backdrop-filter:blur(10px);
+
+color:white;
+
+font-size:38px;
+
+line-height:1;
+
+cursor:pointer;
+
+z-index:5;
+
+transition:.3s;
+
+}
+
+.carousel-btn:hover{
+
+background:#00E6FF;
+
+color:#000;
+
+transform:scale(1.1);
+
+}
+
+.carousel-dots{
+
+display:flex;
+
+justify-content:center;
+
+gap:8px;
+
+margin-top:20px;
+
+}
+
+.carousel-dot{
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.3);
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.carousel-dot.active{
+
+width:24px;
+
+border-radius:10px;
+
+background:#00E6FF;
+
+}
   
 @media (max-width:900px){
 
@@ -515,6 +763,8 @@ padding:90px 25px;
 <a href="#projetos">Projetos</a>
 
 <a href="#atuacao">Atuação</a>
+
+<a href="#jogos">Jogos</a>
 
 <a href="#contato">Contato</a>
 
@@ -657,6 +907,107 @@ Mais do que uma projeto, somos um ambiente de crescimento, inovação e prepara�
 
 </section>
 
+<section id="jogos">
+
+<div class="container">
+
+<h2>Jogos e Modalidades</h2>
+
+<p class="jogos-intro">
+A EXP. atua no desenvolvimento e profissionalização de jogadores
+em diferentes modalidades do ecossistema dos esportes eletrônicos.
+</p>
+
+<div class="carousel">
+
+<button class="carousel-btn prev" aria-label="Jogo anterior">
+‹
+</button>
+
+<div class="carousel-track">
+
+<div class="game-card">
+
+<img src="assets/jogos/pokemon.png" alt="Pokémon">
+
+<div class="game-info">
+
+<h3>Pokémon</h3>
+
+<p>
+Estratégia competitiva, análise de partidas,
+treinamento e desenvolvimento de jogadores.
+</p>
+
+</div>
+
+</div>
+
+<div class="game-card">
+
+<img src="assets/jogos/jogo-2.png" alt="Jogo 2">
+
+<div class="game-info">
+
+<h3>Jogo 2</h3>
+
+<p>
+Capacitação, preparação competitiva e
+desenvolvimento de carreira.
+</p>
+
+</div>
+
+</div>
+
+<div class="game-card">
+
+<img src="assets/jogos/jogo-3.png" alt="Jogo 3">
+
+<div class="game-info">
+
+<h3>Jogo 3</h3>
+
+<p>
+Treinamento, gestão de carreira e
+profissionalização de jogadores.
+</p>
+
+</div>
+
+</div>
+
+<div class="game-card">
+
+<img src="assets/jogos/jogo-4.png" alt="Jogo 4">
+
+<div class="game-info">
+
+<h3>Jogo 4</h3>
+
+<p>
+Desenvolvimento técnico e estratégico
+para o cenário competitivo.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<button class="carousel-btn next" aria-label="Próximo jogo">
+›
+</button>
+
+</div>
+
+<div class="carousel-dots"></div>
+
+</div>
+
+</section>
+
 <section id="contato">
 
 <div class="container">
@@ -717,7 +1068,113 @@ document.querySelector(this.getAttribute("href")).scrollIntoView({
 
 behavior:"smooth",
 
-block:"start"
+block:"start",
+
+const carouselTrack = document.querySelector(".carousel-track");
+
+const prevButton = document.querySelector(".carousel-btn.prev");
+
+const nextButton = document.querySelector(".carousel-btn.next");
+
+const gameCards = document.querySelectorAll(".game-card");
+
+const dotsContainer = document.querySelector(".carousel-dots");
+
+gameCards.forEach((card,index)=>{
+
+const dot = document.createElement("span");
+
+dot.classList.add("carousel-dot");
+
+if(index === 0){
+
+dot.classList.add("active");
+
+}
+
+dot.addEventListener("click",()=>{
+
+card.scrollIntoView({
+
+behavior:"smooth",
+
+inline:"start",
+
+block:"nearest"
+
+});
+
+});
+
+dotsContainer.appendChild(dot);
+
+});
+
+const dots = document.querySelectorAll(".carousel-dot");
+
+prevButton.addEventListener("click",()=>{
+
+carouselTrack.scrollBy({
+
+left:-355,
+
+behavior:"smooth"
+
+});
+
+});
+
+nextButton.addEventListener("click",()=>{
+
+carouselTrack.scrollBy({
+
+left:355,
+
+behavior:"smooth"
+
+});
+
+});
+
+carouselTrack.addEventListener("scroll",()=>{
+
+let closestIndex = 0;
+
+let closestDistance = Infinity;
+
+gameCards.forEach((card,index)=>{
+
+const distance = Math.abs(
+
+card.getBoundingClientRect().left -
+
+carouselTrack.getBoundingClientRect().left
+
+);
+
+if(distance < closestDistance){
+
+closestDistance = distance;
+
+closestIndex = index;
+
+}
+
+});
+
+dots.forEach(dot=>{
+
+dot.classList.remove("active");
+
+});
+
+if(dots[closestIndex]){
+
+dots[closestIndex].classList.add("active");
+
+}
+
+});
 
 });
 
