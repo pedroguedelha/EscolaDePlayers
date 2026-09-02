@@ -625,6 +625,192 @@ calc(-50% - 12.5px)
 }
 
 }
+
+/* ========================================
+   PATROCINADORES E APOIADORES
+======================================== */
+
+.apoio-intro{
+
+max-width:750px;
+
+color:#d9d9d9;
+
+line-height:1.7;
+
+margin-bottom:45px;
+
+}
+
+
+.apoio-carousel{
+
+width:100%;
+
+overflow:hidden;
+
+position:relative;
+
+padding:20px 0 35px;
+
+}
+
+
+.apoio-carousel::before,
+.apoio-carousel::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+width:120px;
+
+height:100%;
+
+z-index:5;
+
+pointer-events:none;
+
+}
+
+
+.apoio-carousel::before{
+
+left:0;
+
+background:linear-gradient(
+to right,
+rgba(5,5,5,.95),
+transparent
+);
+
+}
+
+
+.apoio-carousel::after{
+
+right:0;
+
+background:linear-gradient(
+to left,
+rgba(5,5,5,.95),
+transparent
+);
+
+}
+
+
+.apoio-track{
+
+display:flex;
+
+width:max-content;
+
+gap:25px;
+
+animation:
+
+apoio-scroll 35s linear infinite;
+
+}
+
+
+.apoio-track:hover{
+
+animation-play-state:paused;
+
+}
+
+
+.apoio-card{
+
+flex:0 0 280px;
+
+height:150px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:30px;
+
+background:rgba(20,20,20,.55);
+
+backdrop-filter:blur(12px);
+
+-webkit-backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+transition:.35s;
+
+}
+
+
+.apoio-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#00E6FF;
+
+box-shadow:
+
+0 15px 45px rgba(0,230,255,.18);
+
+}
+
+
+.apoio-card img{
+
+max-width:100%;
+
+max-height:90px;
+
+width:auto;
+
+height:auto;
+
+object-fit:contain;
+
+filter:brightness(.95);
+
+transition:.35s;
+
+}
+
+
+.apoio-card:hover img{
+
+transform:scale(1.08);
+
+filter:brightness(1.1);
+
+}
+
+
+@keyframes apoio-scroll{
+
+from{
+
+transform:translateX(0);
+
+}
+
+to{
+
+transform:translateX(
+calc(-50% - 12.5px)
+);
+
+}
+
+}
   
 @media (max-width:900px)
 
@@ -666,6 +852,40 @@ font-size:20px;
 .game-info p{
 
 font-size:13px;
+
+}
+
+.apoio-track{
+
+gap:18px;
+
+animation-duration:28s;
+
+}
+
+
+.apoio-card{
+
+flex:0 0 230px;
+
+height:125px;
+
+padding:25px;
+
+}
+
+
+.apoio-card img{
+
+max-height:70px;
+
+}
+
+
+.apoio-carousel::before,
+.apoio-carousel::after{
+
+width:60px;
 
 }
   
@@ -801,6 +1021,8 @@ padding:90px 25px;
 <a href="#atuacao">Atuação</a>
 
 <a href="#jogos">Jogos</a>
+
+<a href="#patrocinadores">Patrocinadores e Apoiadores</a>
 
 <a href="#contato">Contato</a>
 
@@ -1171,6 +1393,119 @@ para o cenário competitivo.
 </div>
 
 </section>
+
+<section id="patrocinadores">
+
+<div class="container">
+
+<h2>Patrocinadores e Apoiadores</h2>
+
+<p class="apoio-intro">
+
+A EXP. - Escola de Players acredita que a transformação
+do cenário de esports é construída através de parcerias.
+Conheça as instituições que apoiam e contribuem para
+o desenvolvimento dos nossos projetos.
+
+</p>
+
+<div class="apoio-carousel">
+
+<div class="apoio-track">
+
+
+<!-- PATROCINADORES E APOIADORES -->
+
+<div class="apoio-card">
+
+<img src="assets/apoiadores/logo-1.png"
+alt="Instituição 1">
+
+</div>
+
+
+<div class="apoio-card">
+
+<img src="assets/apoiadores/logo-2.png"
+alt="Instituição 2">
+
+</div>
+
+
+<div class="apoio-card">
+
+<img src="assets/apoiadores/logo-3.png"
+alt="Instituição 3">
+
+</div>
+
+
+<div class="apoio-card">
+
+<img src="assets/apoiadores/logo-4.png"
+alt="Instituição 4">
+
+</div>
+
+
+<div class="apoio-card">
+
+<img src="assets/apoiadores/logo-5.png"
+alt="Instituição 5">
+
+</div>
+
+
+<!-- DUPLICAÇÃO PARA LOOP CONTÍNUO -->
+
+<div class="apoio-card">
+
+<img src="assets/apoiadores/logo-1.png"
+alt="Instituição 1">
+
+</div>
+
+
+<div class="apoio-card">
+
+<img src="assets/apoiadores/logo-2.png"
+alt="Instituição 2">
+
+</div>
+
+
+<div class="apoio-card">
+
+<img src="assets/apoiadores/logo-3.png"
+alt="Instituição 3">
+
+</div>
+
+
+<div class="apoio-card">
+
+<img src="assets/apoiadores/logo-4.png"
+alt="Instituição 4">
+
+</div>
+
+
+<div class="apoio-card">
+
+<img src="assets/apoiadores/logo-5.png"
+alt="Instituição 5">
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+  
 <section id="contato">
 
 <h2>Contato</h2>
