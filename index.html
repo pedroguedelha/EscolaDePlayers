@@ -15,6 +15,412 @@
 
 <style>
 
+/* ========================================
+   POP-UP DO CENSO
+======================================== */
+
+.popup-overlay{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:25px;
+
+background:rgba(0,0,0,.78);
+
+backdrop-filter:blur(8px);
+
+-webkit-backdrop-filter:blur(8px);
+
+z-index:9999;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:
+
+opacity .35s ease,
+
+visibility .35s ease;
+
+}
+
+
+.popup-overlay.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+
+.popup{
+
+position:relative;
+
+width:min(620px,100%);
+
+background:
+
+linear-gradient(
+
+145deg,
+
+rgba(20,20,20,.96),
+
+rgba(8,8,8,.96)
+
+);
+
+border:1px solid rgba(0,230,255,.25);
+
+border-radius:25px;
+
+padding:50px;
+
+overflow:hidden;
+
+box-shadow:
+
+0 30px 100px rgba(0,0,0,.65),
+
+0 0 60px rgba(0,230,255,.10);
+
+transform:translateY(25px) scale(.96);
+
+transition:.4s ease;
+
+}
+
+
+.popup-overlay.active .popup{
+
+transform:translateY(0) scale(1);
+
+}
+
+
+.popup::before{
+
+content:"";
+
+position:absolute;
+
+top:-150px;
+
+left:-150px;
+
+width:300px;
+
+height:300px;
+
+background:radial-gradient(
+
+circle,
+
+rgba(0,230,255,.20),
+
+transparent 70%
+
+);
+
+pointer-events:none;
+
+}
+
+
+.popup::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-150px;
+
+right:-150px;
+
+width:300px;
+
+height:300px;
+
+background:radial-gradient(
+
+circle,
+
+rgba(255,0,140,.18),
+
+transparent 70%
+
+);
+
+pointer-events:none;
+
+}
+
+
+.popup-content{
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+.popup-close{
+
+position:absolute;
+
+top:15px;
+
+right:18px;
+
+width:40px;
+
+height:40px;
+
+border:0;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.08);
+
+color:white;
+
+font-size:28px;
+
+line-height:1;
+
+cursor:pointer;
+
+z-index:5;
+
+transition:.3s;
+
+}
+
+
+.popup-close:hover{
+
+background:rgba(255,0,140,.25);
+
+transform:rotate(90deg);
+
+}
+
+
+.popup-tag{
+
+display:inline-block;
+
+margin-bottom:20px;
+
+padding:7px 14px;
+
+border-radius:30px;
+
+background:rgba(0,230,255,.10);
+
+border:1px solid rgba(0,230,255,.25);
+
+color:#00E6FF;
+
+font-size:11px;
+
+font-weight:700;
+
+letter-spacing:1.5px;
+
+}
+
+
+.popup h2{
+
+font-family:Orbitron;
+
+font-size:clamp(1.7rem,4vw,2.4rem);
+
+line-height:1.25;
+
+margin-bottom:20px;
+
+}
+
+
+.popup h2 strong{
+
+background:linear-gradient(
+
+90deg,
+
+#00E6FF,
+
+#FF008C
+
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+background-clip:text;
+
+}
+
+
+.popup p{
+
+line-height:1.7;
+
+}
+
+
+.popup-text{
+
+color:#ccc;
+
+margin-top:10px;
+
+max-width:520px;
+
+}
+
+
+.popup-actions{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+margin-top:35px;
+
+flex-wrap:wrap;
+
+}
+
+
+.popup-btn{
+
+display:inline-block;
+
+padding:16px 28px;
+
+border-radius:50px;
+
+background:linear-gradient(
+
+90deg,
+
+#00E6FF,
+
+#FF008C
+
+);
+
+color:white;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.3s;
+
+box-shadow:
+
+0 0 25px rgba(0,230,255,.25);
+
+}
+
+
+.popup-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 0 35px rgba(0,230,255,.45);
+
+}
+
+
+.popup-secondary{
+
+padding:15px 22px;
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:50px;
+
+background:rgba(255,255,255,.05);
+
+color:#ddd;
+
+font-family:Inter,sans-serif;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+.popup-secondary:hover{
+
+background:rgba(255,255,255,.10);
+
+color:white;
+
+}
+
+
+@media(max-width:600px){
+
+.popup{
+
+padding:40px 25px;
+
+border-radius:20px;
+
+}
+
+.popup h2{
+
+font-size:1.6rem;
+
+}
+
+.popup-actions{
+
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+.popup-btn,
+.popup-secondary{
+
+text-align:center;
+
+width:100%;
+
+}
+
+}
+  
 *{
 margin:0;
 padding:0;
@@ -1006,6 +1412,66 @@ padding:90px 25px;
 
 <body>
 
+<!-- ========================================
+     POP-UP DO CENSO POKÉMON
+======================================== -->
+
+<div id="censo-popup" class="popup-overlay">
+
+    <div class="popup">
+
+        <button class="popup-close" id="fechar-popup" aria-label="Fechar">
+            &times;
+        </button>
+
+        <div class="popup-content">
+
+            <span class="popup-tag">
+                PESQUISA DA COMUNIDADE
+            </span>
+
+            <h2>
+                Censo da Comunidade
+                <br>
+                <strong>Pokémon Brasil 2026–2027</strong>
+            </h2>
+
+            <p>
+                Queremos ouvir você!
+            </p>
+
+            <p class="popup-text">
+                Participe do levantamento que busca conhecer melhor
+                o perfil, os hábitos e as necessidades da comunidade
+                Pokémon brasileira.
+            </p>
+
+            <div class="popup-actions">
+
+                <a
+                    href="forms.gle/1jCF9s7GAz55ZZtD7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="popup-btn"
+                >
+                    Sua opnião importa, participe do Censo!
+                </a>
+
+                <button
+                    id="continuar-site"
+                    class="popup-secondary"
+                >
+                    Continuar no site
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 <header>
 
 <div class="container">
@@ -1517,6 +1983,72 @@ block:"start"
 });
 
 });
+
+});
+
+/* ========================================
+   POP-UP DO CENSO
+======================================== */
+
+const censoPopup = document.getElementById("censo-popup");
+
+const fecharPopup = document.getElementById("fechar-popup");
+
+const continuarSite = document.getElementById("continuar-site");
+
+
+function abrirPopup(){
+
+censoPopup.classList.add("active");
+
+document.body.style.overflow = "hidden";
+
+}
+
+
+function fecharCenso(){
+
+censoPopup.classList.remove("active");
+
+document.body.style.overflow = "";
+
+}
+
+
+fecharPopup.addEventListener(
+"click",
+fecharCenso
+);
+
+
+continuarSite.addEventListener(
+"click",
+fecharCenso
+);
+
+
+/* Fecha clicando fora do pop-up */
+
+censoPopup.addEventListener("click",function(e){
+
+if(e.target === censoPopup){
+
+fecharCenso();
+
+}
+
+});
+
+
+/* Abre automaticamente ao carregar a página */
+
+window.addEventListener("load",function(){
+
+setTimeout(function(){
+
+abrirPopup();
+
+},500);
 
 });
   
