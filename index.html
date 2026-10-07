@@ -730,6 +730,56 @@ margin-top:50px;
 
 }
   
+
+/* Cards clicáveis — preparados para futuras páginas */
+/* Dimensões dos links dos carrosséis */
+.game-card-link{
+    flex:0 0 330px;
+}
+
+.time-card-link{
+    flex:0 0 250px;
+}
+
+.apoio-card-link{
+    flex:0 0 280px;
+}
+
+@media (max-width:900px){
+    .game-card-link{flex-basis:270px;}
+    .time-card-link{flex-basis:230px;}
+    .apoio-card-link{flex-basis:230px;}
+}
+
+.card-link{
+    display:block;
+    color:inherit;
+    text-decoration:none;
+}
+
+.card-link:focus-visible{
+    outline:2px solid #00E6FF;
+    outline-offset:5px;
+    border-radius:20px;
+}
+
+.game-card-link,
+.time-card-link,
+.apoio-card-link{
+    display:block;
+    flex:0 0 auto;
+    color:inherit;
+    text-decoration:none;
+}
+
+.game-card-link:focus-visible,
+.time-card-link:focus-visible,
+.apoio-card-link:focus-visible{
+    outline:2px solid #00E6FF;
+    outline-offset:5px;
+    border-radius:22px;
+}
+
 .card{
 
 background:rgba(20,20,20,.55);
@@ -1355,7 +1405,7 @@ calc(-50% - 12.5px)
 
 }
   
-@media (max-width:900px)
+@media (max-width:900px){
 
 .games-track{
 
@@ -1650,6 +1700,8 @@ padding:90px 25px;
 
 <a href="#jogos">Jogos</a>
 
+<a href="#times-parceiros">Times Parceiros</a>
+
 <a href="#patrocinadores">Patrocinadores e Apoiadores</a>
 
 <a href="#contato">Contato</a>
@@ -1719,6 +1771,7 @@ Mais do que uma projeto, somos um ambiente de crescimento, inovação e prepara�
 
 <div class="cards">
 
+<a class="card-link" href="pages/capacitacao.html">
 <div class="card">
 
 <h3>🎮 Capacitação</h3>
@@ -1726,7 +1779,9 @@ Mais do que uma projeto, somos um ambiente de crescimento, inovação e prepara�
 <p>Cursos, oficinas e mentorias para jogadores competitivos.</p>
 
 </div>
+</a>
 
+<a class="card-link" href="pages/gestao-de-carreira.html">
 <div class="card">
 
 <h3>🏆 Gestão de Carreira</h3>
@@ -1734,7 +1789,9 @@ Mais do que uma projeto, somos um ambiente de crescimento, inovação e prepara�
 <p>Planejamento profissional e desenvolvimento de atletas.</p>
 
 </div>
+</a>
 
+<a class="card-link" href="pages/pesquisa.html">
 <div class="card">
 
 <h3>📊 Pesquisa</h3>
@@ -1742,7 +1799,9 @@ Mais do que uma projeto, somos um ambiente de crescimento, inovação e prepara�
 <p>Levantamentos estatísticos e estudos sobre a comunidade gamer.</p>
 
 </div>
+</a>
 
+<a class="card-link" href="pages/eventos.html">
 <div class="card">
 
 <h3>🎤 Eventos</h3>
@@ -1750,6 +1809,7 @@ Mais do que uma projeto, somos um ambiente de crescimento, inovação e prepara�
 <p>Organização de campeonatos, palestras e ações presenciais.</p>
 
 </div>
+</a>
 
 </div>
 
@@ -1763,6 +1823,7 @@ Mais do que uma projeto, somos um ambiente de crescimento, inovação e prepara�
 
 <div class="cards">
 
+<a class="card-link" href="pages/esports.html">
 <div class="card">
 
 <h3>Esports</h3>
@@ -1770,7 +1831,9 @@ Mais do que uma projeto, somos um ambiente de crescimento, inovação e prepara�
 <p>Formação de atletas de alto rendimento.</p>
 
 </div>
+</a>
 
+<a class="card-link" href="pages/comunicacao.html">
 <div class="card">
 
 <h3>Comunicação</h3>
@@ -1778,7 +1841,9 @@ Mais do que uma projeto, somos um ambiente de crescimento, inovação e prepara�
 <p>Marketing, branding e posicionamento de jogadores.</p>
 
 </div>
+</a>
 
+<a class="card-link" href="pages/producao.html">
 <div class="card">
 
 <h3>Produção</h3>
@@ -1786,6 +1851,7 @@ Mais do que uma projeto, somos um ambiente de crescimento, inovação e prepara�
 <p>Eventos, torneios e ativações para a comunidade.</p>
 
 </div>
+</a>
 
 </div>
 
@@ -1806,6 +1872,7 @@ em diferentes modalidades do ecossistema dos esportes eletrônicos.
 
 <div class="games-track">
 
+<a class="game-card-link" href="pages/pokemon.html">
 <div class="game-card">
 
 <img src="assets/jogos/PkmnChampsLogo.png" alt="Pokémon Champions">
@@ -1820,9 +1887,11 @@ treinamento e desenvolvimento de Atletas.
 </p>
 
 </div>
+</a>
 
 </div>
 
+<a class="game-card-link" href="pages/call-of-duty-mobile.html">
 <div class="game-card">
 
 <img src="assets/jogos/Call-of-Duty-Mobile-Logo-PNG-Image-Background.png" alt="Call Of Duty Mobile">
@@ -1837,10 +1906,12 @@ desenvolvimento em Equipe.
 </p>
 
 </div>
+</a>
 
 </div>
 
 
+<a class="game-card-link" href="pages/free-fire.html">
 <div class="game-card">
 
 <img src="assets/jogos/FREE_FIRE_LOGO.PNG.png" alt="Free Fire">
@@ -1855,9 +1926,11 @@ profissionalização de jogadores.
 </p>
 
 </div>
+</a>
 
 </div>
 
+<a class="game-card-link" href="pages/honor-of-kings.html">
 <div class="game-card">
 
 <img src="assets/jogos/Honor_of_Kings.png" alt="Honor of Kings">
@@ -1872,9 +1945,11 @@ para o cenário competitivo.
 </p>
 
 </div>
+</a>
 
 </div>
 
+<a class="game-card-link" href="pages/mobile-legends.html">
 <div class="game-card">
 
 <img src="assets/jogos/Mobile_Legends.png" alt="Mobile Legends">
@@ -1889,9 +1964,11 @@ desenvolvimento em Equipe.
 </p>
 
 </div>
+</a>
 
 </div>
 
+<a class="game-card-link" href="pages/brawl-stars.html">
 <div class="game-card">
 
 <img src="assets/jogos/brawl-stars-logo-0.png" alt="Brawl Stars">
@@ -1906,6 +1983,7 @@ para o cenário competitivo.
 </p>
 
 </div>
+</a>
 
 </div>
 
@@ -2040,39 +2118,55 @@ para o cenário competitivo.
             <div class="times-track">
 
                 <!-- Times -->
-                <div class="time-card">
+                <a class="time-card-link" href="pages/sun-in-rio.html">
+<div class="time-card">
                     <img src="Patrocinadores e Apoiadores/LOGO_SUN.jpeg" alt="Time Parceiro SUN IN RIO - Pokémon VGC">
                 </div>
+</a>
 
-                <div class="time-card">
+                <a class="time-card-link" href="pages/time-parceiro-2.html">
+<div class="time-card">
                     <img src="assets/times/time2.png" alt="Seja um Time Parceiro">
                 </div>
+</a>
 
-                <div class="time-card">
+                <a class="time-card-link" href="pages/time-parceiro-3.html">
+<div class="time-card">
                     <img src="assets/times/time3.png" alt="Time Parceiro 3">
                 </div>
+</a>
 
-                <div class="time-card">
+                <a class="time-card-link" href="pages/time-parceiro-4.html">
+<div class="time-card">
                     <img src="assets/times/time4.png" alt="Time Parceiro 4">
                 </div>
+</a>
 
                 <!-- DUPLICAÇÃO PARA LOOP INFINITO -->
 
-                <div class="time-card">
+                <a class="time-card-link" href="pages/sun-in-rio.html">
+<div class="time-card">
                     <img src="Patrocinadores e Apoiadores/LOGO_SUN.jpeg" alt="Time Parceiro SUN IN RIO - Pokémon VGC">
                 </div>
+</a>
 
-                <div class="time-card">
+                <a class="time-card-link" href="pages/time-parceiro-2.html">
+<div class="time-card">
                     <img src="assets/times/time2.png" alt="Time Parceiro 2">
                 </div>
+</a>
 
-                <div class="time-card">
+                <a class="time-card-link" href="pages/time-parceiro-3.html">
+<div class="time-card">
                     <img src="assets/times/time3.png" alt="Time Parceiro 3">
                 </div>
+</a>
 
-                <div class="time-card">
+                <a class="time-card-link" href="pages/time-parceiro-4.html">
+<div class="time-card">
                     <img src="assets/times/time4.png" alt="Time Parceiro 4">
                 </div>
+</a>
 
             </div>
 
@@ -2104,36 +2198,44 @@ o desenvolvimento dos nossos projetos.
 
 <!-- PATROCINADORES E APOIADORES -->
 
+<a class="apoio-card-link" href="pages/geek-shop.html">
 <div class="apoio-card apoio-geekshop">
 
 <img src="Patrocinadores e Apoiadores/logo Geek shop.png"
 alt="Geek Shop">
 
 </div>
+</a>
 
 
+<a class="apoio-card-link" href="pages/seja-um-patrocinador.html">
 <div class="apoio-card">
 
 <img src="assets/apoiadores/logo-2.png"
 alt="Seja um Patrocinador!">
 
 </div>
+</a>
 
 <!-- DUPLICAÇÃO PARA LOOP CONTÍNUO -->
 
+<a class="apoio-card-link" href="pages/geek-shop.html">
 <div class="apoio-card apoio-geekshop">
 
 <img src="Patrocinadores e Apoiadores/logo Geek shop.png"
 alt="Geek Shop">
 
 </div>
+</a>
 
+<a class="apoio-card-link" href="pages/seja-um-patrocinador.html">
 <div class="apoio-card">
 
 <img src="assets/apoiadores/logo-2.png"
 alt="Seja um Patrocinador!">
 
 </div>
+</a>
 
 </div>
 
@@ -2279,4 +2381,3 @@ abrirPopup();
 </body>
   
 </html>
-
