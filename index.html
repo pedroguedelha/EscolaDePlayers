@@ -1032,6 +1032,143 @@ calc(-50% - 12.5px)
 
 }
 
+/* =========================
+   TIMES PARCEIROS
+========================= */
+
+.times-intro {
+    margin-bottom: 40px;
+}
+
+.times-intro p {
+    max-width: 800px;
+    color: #ccc;
+    line-height: 1.7;
+}
+
+/* Área do carrossel */
+
+.times-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 25px 0;
+}
+
+/* Máscaras laterais */
+
+.times-carousel::before,
+.times-carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.times-carousel::before {
+    left: 0;
+    background: linear-gradient(
+        to right,
+        rgba(5,5,5,1),
+        rgba(5,5,5,0)
+    );
+}
+
+.times-carousel::after {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        rgba(5,5,5,1),
+        rgba(5,5,5,0)
+    );
+}
+
+/* Faixa */
+
+.times-track {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: max-content;
+
+    animation: times-scroll 35s linear infinite;
+}
+
+/* Cards */
+
+.time-card {
+    flex: 0 0 250px;
+    height: 140px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(20,20,20,.55);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 20px;
+
+    transition: .35s;
+}
+
+.time-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #00E6FF;
+
+    box-shadow:
+        0 0 30px rgba(0,230,255,.15);
+}
+
+/* Logos */
+
+.time-card img {
+    max-width: 90%;
+    max-height: 90px;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    transition: .35s;
+}
+
+.time-card:hover img {
+    transform: scale(1.08);
+}
+
+/* Loop */
+
+@keyframes times-scroll {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(
+            calc(-50% - 12.5px)
+        );
+    }
+
+}
+
+/* Pausa ao passar o mouse */
+
+.times-carousel:hover .times-track {
+    animation-play-state: paused;
+}
+
 /* ========================================
    PATROCINADORES E APOIADORES
 ======================================== */
@@ -1259,6 +1396,26 @@ font-size:20px;
 
 font-size:13px;
 
+}
+
+.times-track {
+    gap: 18px;
+    animation-duration: 28s;
+}
+
+.time-card {
+    flex: 0 0 230px;
+    height: 125px;
+    padding: 20px;
+}
+
+.time-card img {
+    max-height: 75px;
+}
+
+.times-carousel::before,
+.times-carousel::after {
+    width: 60px;
 }
 
 .apoio-track{
@@ -1865,6 +2022,66 @@ para o cenário competitivo.
 
 </section>
 
+<section id="times-parceiros">
+
+    <div class="container">
+
+        <h2>Times Parceiros</h2>
+
+        <div class="times-intro">
+            <p>
+                Conectamos talentos, equipes e organizações para fortalecer
+                o desenvolvimento do cenário competitivo de esports.
+            </p>
+        </div>
+
+        <div class="times-carousel">
+
+            <div class="times-track">
+
+                <!-- Times -->
+                <div class="time-card">
+                    <img src="Patrocinadores e Apoiadores/LOGO_SUN.jpeg" alt="Time Parceiro SUN IN RIO - Pokémon VGC">
+                </div>
+
+                <div class="time-card">
+                    <img src="assets/times/time2.png" alt="Seja um Time Parceiro">
+                </div>
+
+                <div class="time-card">
+                    <img src="assets/times/time3.png" alt="Time Parceiro 3">
+                </div>
+
+                <div class="time-card">
+                    <img src="assets/times/time4.png" alt="Time Parceiro 4">
+                </div>
+
+                <!-- DUPLICAÇÃO PARA LOOP INFINITO -->
+
+                <div class="time-card">
+                    <img src="Patrocinadores e Apoiadores/LOGO_SUN.jpeg" alt="Time Parceiro SUN IN RIO - Pokémon VGC">
+                </div>
+
+                <div class="time-card">
+                    <img src="assets/times/time2.png" alt="Time Parceiro 2">
+                </div>
+
+                <div class="time-card">
+                    <img src="assets/times/time3.png" alt="Time Parceiro 3">
+                </div>
+
+                <div class="time-card">
+                    <img src="assets/times/time4.png" alt="Time Parceiro 4">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+   
 <section id="patrocinadores">
 
 <div class="container">
